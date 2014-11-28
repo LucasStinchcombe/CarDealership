@@ -1,2 +1,43 @@
 body{
 }
+.menu{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 12%;
+  width: 100%;
+  background-color: #dbdbdb;
+  border-bottom: 1px solid #999999;
+}
+.logo{
+  text-align: left;
+  position: absolute;
+  bottom: 25%;
+  left: 3%;
+}
+.links{
+  position: absolute;
+  bottom: 30%;
+  right: 3%;
+}
+a{
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111111;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 5px;
+}
+a:hover{
+  color: #777777;
+}
+h1{
+  margin: 0px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111111;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 34px;
+  font-weight: bold;
+}
