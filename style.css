@@ -1,9 +1,14 @@
 body{
-  background: url(images/background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #222222;
+}
+img{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index = -1;
+  display: none;
 }
 .menu{
   position: fixed;
@@ -13,7 +18,7 @@ body{
   width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid #999999;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 .logo{
   text-align: left;
@@ -33,7 +38,7 @@ a{
   font-family: 'Fjalla One', sans-serif;
   font-size: 22px;
   font-weight: bold;
-  padding: 5px;
+  padding: 10px;
 }
 a:hover{
   color: #777777;
