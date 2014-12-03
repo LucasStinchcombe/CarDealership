@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Shop</title>
+  <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+  <img src="images/background_1.jpg">
+  <img src="images/background_2.jpg">
+  <img src="images/background_3.jpg">
+  <div class="menu">
+    <div class="logo">
+      <h1>Buy Our Cars</h1>
+    </div>
+    <div class="links">
+      <a href="#">home</a>
+      <a href="#">catalogue</a>
+      <a href="#">login</a>
+    </div>
+  </div>
+
+  <script language="javascript">
+
+  var background = function(){
+    var counter =0;
+    $("img").each(function(index) {
+      var image = this;
+      $(image).delay(4000*index).fadeIn(750, function(){
+        setTimeout(function(){
+          counter++;
+          if(counter != 3 ){
+            $(image).fadeOut(1000);
+          }
+        }, 3250);
+        });
+      });
+    }
+
+
+    background();
+
+  </script>
+
+</body>
+</html>
