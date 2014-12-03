@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/bin/python
 import cgi
 
 form = cgi.FieldStorage()
@@ -91,7 +91,6 @@ def displayBill():
 	inventory.writelines(invList)		# rewrite invlist as lines
 	inventory.close()
 	total = costM + costL + costF		# calculate total
-	#after this, does it just print directly to screen?
 	print "<b><i>Bill:</i></b>"
 	print "<center><i><b>Total: $%d</b></i></center><br />" %(total)
 	print "<center><a href=\"http://www.cs.mcgill.ca/~jgoxha/cagalogue.html\">Return to catalogue</a></center>"
