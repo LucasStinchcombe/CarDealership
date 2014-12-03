@@ -6,22 +6,23 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-  <img src="images/background_1.jpg">
-  <img src="images/background_2.jpg">
-  <img src="images/background_3.jpg">
+  <img class="background" src="images/background_1.jpg">
+  <img class="background" src="images/background_2.jpg">
+  <img class="background" src="images/background_3.jpg">
   <div class="menu">
     <div class="logo">
       <h1>Buy Our Cars</h1>
     </div>
     <div class="links">
-      <a href="#">home</a>
-      <a href="#">catalogue</a>
-      <a href="#">login</a>
+      <a href="index.html">home</a>
+      <a href="catalogue.html">catalogue</a>
+      <a href="login.html" target="_blank">login</a>
     </div>
   </div>
 
-  <script language="javascript">
 
+
+  <script language="javascript">
   var background = function(){
     var counter =0;
     $("img").each(function(index) {
@@ -36,8 +37,6 @@
         });
       });
     }
-
-
     background();
 
   </script>
