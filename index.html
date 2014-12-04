@@ -6,9 +6,27 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-  <img class="background" src="images/background_1.jpg">
-  <img class="background" src="images/background_2.jpg">
-  <img class="background" src="images/background_3.jpg">
+
+  <div class="slide">
+    <img class="background" src="images/background_1.jpg">
+    <div id="caption1">
+      <h3>Look at this car.  We sell these.  You want one.</h3>
+    </div>
+  </div>
+  <div class="slide">
+    <img class="background" src="images/background_2.jpg">
+    <div id="caption2">
+      <h3>That's an airplane.  Airplanes are fast.  But this car is faster.</h3>
+    </div>
+  </div>
+  <div class="slide">
+    <img class="background" src="images/background_3.jpg">
+    <div id="caption3">
+      <h3>Wow. Look at that car.  Do you have a girlfriend?  I bet if you owned this car you would.  But you don't, so no girlfriend for you.</h3>
+    </div>
+  </div>
+
+  
   <div class="menu">
     <div class="logo">
       <h1>Buy Our Cars</h1>
@@ -25,7 +43,7 @@
   <script language="javascript">
   var background = function(){
     var counter =0;
-    $("img").each(function(index) {
+    $(".slide").each(function(index) {
       var image = this;
       $(image).delay(4000*index).fadeIn(750, function(){
         setTimeout(function(){
