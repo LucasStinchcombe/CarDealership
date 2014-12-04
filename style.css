@@ -41,6 +41,17 @@ img.background{
   padding-bottom: 25px;
   display: none;
 }
+.login{
+  position: absolute;
+  top: 17%;
+  left: 5%;
+  width: 90%;
+  height: 75%;
+  background-color: #cccccc;
+}
+.container{
+  margin: 30px;
+}
 img.product{
   padding: 25px;
 }
@@ -69,6 +80,12 @@ h1{
   font-size: 36px;
   font-weight: bold;
 }
+.login h1{
+  color: #333333
+  padding: 15px;
+  font-size: 28px;
+  padding-bottom: 15px;
+}
 h3{
   text-transform: uppercase;
   text-decoration: none;
@@ -83,4 +100,9 @@ p{
   font-size: 18px;
   line-height: 28px;
   padding-right: 15px;
+}
+.login p{
+  color: #333333;
+  padding-left: 20px;
+
 }
