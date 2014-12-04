@@ -6,7 +6,6 @@ int main(int argc, char *argv[]){
 
   printf("%s%c%c\n", "Content-Type:text/html;charset=iso-8859-1",13,10);
 
-  FILE *catalogue;
   char username[26];
   char password[26];
   char buffer[100];
@@ -36,8 +35,8 @@ int main(int argc, char *argv[]){
   a=0;
 
   //open members.csv
-  FILE *members=fopen("members.csv", "rt");
-  while(fgets(buffer, 100, members)!=NULL){
+  FILE *ptr=fopen("members.csv", "rt");
+  while(fgets(buffer, 100, ptr)!=NULL){
     len=strlen(buffer);
     while(buffer[a] != ','){
       a++;
@@ -54,20 +53,22 @@ int main(int argc, char *argv[]){
       memberPass[a-b]=buffer[a];
       a++;
     } memberPass[a-b]='\0';
-    printf("%s %s", memberUser, memberPass);
     if((strcmp(username, memberUser)==0) && (strcmp(password, memberPass)==0)){
       valid = 1;
       break;
     }
     a=0;
   }
-  fclose(members);
+  fclose(ptr);
+
+
   a=0;
   if(valid==1){
-    catalogue = fopen("catalogue.html", "rt");
-    while(fgets(buffer, 100, catalogue)!=NULL){
+    ptr = fopen("catalogue.html", "rt");
+    while(fgets(buffer, 100, ptr)!=NULL){
       a++;
       if(a==25) printf("<input type=\"hidden\" name=\"user\" value=\"%s\">", username);
+      else if(a==17) printf("<a>Logged In</a>");
       else{
         b=0;
         while(buffer[b] != '\0'){
@@ -77,7 +78,24 @@ int main(int argc, char *argv[]){
         }
       }
     }
-    fclose(catalogue);
+    fclose(ptr);
+
+    ptr = fopen("loggedin.csv", "a");
+    fprintf(ptr, "%s\n", username);
+    fclose(ptr);
+
+  }
+  else{
+    ptr = fopen("error.html", "rt");
+    while(fgets(buffer, 100, ptr)!=NULL){
+      b=0;
+      while(buffer[b] != '\0'){
+	c = buffer[b];
+	putchar(c);
+	b++;
+      }
+    }
+    fclose(ptr);
   }
   return 0;
 }
