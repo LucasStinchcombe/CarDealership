@@ -80,6 +80,21 @@ int main(int argc, char *argv[]){
     }
     fclose(ptr);
 
+    ptr = fopen("loggedin.csv", "rt");
+    while(fgets(buffer, 100, ptr)!=NULL){
+      a=0;
+      while(buffer[a] != '\n'){
+	memberUser[a]=buffer[a];
+	a++;
+      }
+      memberPass[a]='\0';
+      if(strcmp(username, memberUser)==0){
+	fclose(ptr);
+	goto end;
+      }
+    }
+    fclose(ptr);
+
     ptr = fopen("loggedin.csv", "a");
     fprintf(ptr, "%s\n", username);
     fclose(ptr);
@@ -97,5 +112,8 @@ int main(int argc, char *argv[]){
     }
     fclose(ptr);
   }
+  
+
+ end:
   return 0;
 }
