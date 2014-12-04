@@ -76,9 +76,22 @@ img.background{
   width: 90%;
   height: 75%;
   background-color: #cccccc;
+  display: none;
 }
-.container{
-  margin: 30px;
+.loginform{
+  position: absolute;
+  top: 7%;
+  left: 4%;
+  width: 46%;
+  height: 86%;
+  border-right: 1px solid #dbdbdb;
+}
+.register{
+  position: absolute;
+  top: 7%;
+  right: 4%;
+  width: 42%;
+  height: 86%;
 }
 img.product{
   padding: 25px;
@@ -94,6 +107,11 @@ a{
   font-size: 24px;
   font-weight: bold;
   padding: 10px;
+}
+.register a{
+  text-transform: none;
+  color: #333333;
+  font-size: 20px;
 }
 a:hover{
   color: #777777;
@@ -136,5 +154,4 @@ p{
 .login p{
   color: #333333;
   padding-left: 20px;
-
 }
