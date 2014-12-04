@@ -69,6 +69,8 @@ a{
 }
 a:hover{
   color: #777777;
+  cursor: pointer;
+  cursor: hand;
 }
 h1{
   margin: 0px;
