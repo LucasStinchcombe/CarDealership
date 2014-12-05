@@ -36,6 +36,8 @@ int main(int argc, char *argv[]){
 
   //open members.csv
   FILE *ptr=fopen("members.csv", "rt");
+
+  //read line by line, storing each member's username and password and comparing with login input.
   while(fgets(buffer, 100, ptr)!=NULL){
     len=strlen(buffer);
     while(buffer[a] != ','){
@@ -53,6 +55,7 @@ int main(int argc, char *argv[]){
       memberPass[a-b]=buffer[a];
       a++;
     } memberPass[a-b]='\0';
+    //break if user is verified
     if((strcmp(username, memberUser)==0) && (strcmp(password, memberPass)==0)){
       valid = 1;
       break;
@@ -60,9 +63,9 @@ int main(int argc, char *argv[]){
     a=0;
   }
   fclose(ptr);
-
-
   a=0;
+
+  //if valid, open catalogue and print to stdout with username in hidden field
   if(valid==1){
     ptr = fopen("catalogue.html", "rt");
     while(fgets(buffer, 100, ptr)!=NULL){
@@ -80,6 +83,7 @@ int main(int argc, char *argv[]){
     }
     fclose(ptr);
 
+    //read loggedin.csv and check existence of user
     ptr = fopen("loggedin.csv", "rt");
     while(fgets(buffer, 100, ptr)!=NULL){
       a=0;
@@ -88,18 +92,22 @@ int main(int argc, char *argv[]){
 	a++;
       }
       memberPass[a]='\0';
+      //if user exits, skip the append step
       if(strcmp(username, memberUser)==0){
 	fclose(ptr);
 	goto end;
       }
     }
     fclose(ptr);
-
+    
+    //append username to loggedin.csv
     ptr = fopen("loggedin.csv", "a");
     fprintf(ptr, "%s\n", username);
     fclose(ptr);
 
   }
+  
+  //else print error page to stdout
   else{
     ptr = fopen("error.html", "rt");
     while(fgets(buffer, 100, ptr)!=NULL){
