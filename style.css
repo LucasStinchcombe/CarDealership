@@ -95,7 +95,7 @@ img.background{
   height: 86%;
 }
 img.product{
-  padding: 25px;
+  padding: 60px;
 }
 .info{
   padding: 20px;
@@ -156,4 +156,35 @@ p{
 .login p{
   color: #333333;
   padding-left: 20px;
+}
+.loggedin{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #eeeeee;
+  opacity: 0.9;
+}
+.welcome{
+  position: absolute;
+  bottom: 45%;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+}
+.welcome h1{
+  padding: 10px;
+}
+.middle{
+  background-color: #333333;
+  padding-left: 50px;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+td {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }

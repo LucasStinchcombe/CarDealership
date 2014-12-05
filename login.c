@@ -72,6 +72,16 @@ int main(int argc, char *argv[]){
       a++;
       if(a==25) printf("<input type=\"hidden\" name=\"user\" value=\"%s\">", username);
       else if(a==17) printf("<a>Logged In</a>");
+      else if(a==81){
+	printf("<div class=\"loggedin\"><div class=\"welcome\">");
+	printf("<h1>Hey, %s.</h1><h1>Check out Our Catalogue!</h1>", username);
+	printf("</div></div>");
+      }
+      else if(a==86){
+	printf("setTimeout(function(){");
+	printf("$(\".loggedin\").fadeOut(750);");
+	printf("}, 2000);");
+      }
       else{
         b=0;
         while(buffer[b] != '\0'){
