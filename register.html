@@ -1,0 +1,62 @@
+
+<html>
+<head>
+<title> Registration </title>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body background="lambo1.jpg" text="black">
+
+<div class="menu">
+
+<div class="logo">
+
+<h1>Buy Our Cars</h1>
+
+</div>
+
+<div class="links">
+
+<a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/#">Home</a>
+<a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/catalogue.html">Catalogue</a>
+<a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/login.html">Login</a>
+
+</div>
+
+</div>
+
+<div style="position: relative">
+
+<p style="position: fixed; bottom: 0; width:100%; text-align: center">Please complete all fields and click submit to create your account.</p>
+
+<form  action="Register.pl" autocomplete="on"> 
+     <h1 style="position: fixed; top: 150; width:100%; text-align: left">Register</h1> 
+     <p style="position: fixed; top: 200; width:100%; text-align: left"> 
+          <label for="firstname" class="fname" data-icon="f" >Firstname:</label>
+          <input id="firstname" name="firstname" required="required" type="text" placeholder="firstname"/>
+     </p>
+     <p style="position: fixed; top: 230; width:100%; text-align: left"> 
+          <label for="lastname" class="lname" data-icon="l" >Lastname:</label>
+          <input id="lastname" name="lastname" required="required" type="text" placeholder="lastname"/>
+     </p>
+     <p style="position: fixed; top: 260; width:100%; text-align: left"> 
+          <label for="username" class="uname" data-icon="u" >Username:</label>
+          <input id="username" name="username" required="required" type="text" placeholder="Username"/>
+     </p>
+     <p style="position: fixed; top: 290; width:100%; text-align: left"> 
+          <label for="password" class="youpasswd" data-icon="p">Password:</label>
+          <input id="password" name="password" required="required" type="password" placeholder="Password" /> 
+     </p>
+     <p style="position: fixed; top: 320; width:100%; text-align: left"> 
+          <label for="password" class="youpasswd" data-icon="p">Confirm Password:</label>
+          <input id="password" name="password" required="required" type="password" placeholder="Password" /> 
+     </p>
+     <p class="register button"; style="position: fixed; top: 350; width:100%; text-align: left"> 
+          <input type="submit" value="Register" /> 
+
+</div>
+
+</body>
+</html>
