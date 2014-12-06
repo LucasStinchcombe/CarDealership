@@ -14,7 +14,7 @@ while (my $row = <$fh>) {
 	if (index($row, $username) != -1) 
 	{
 	#close $fh;
-	print $q->header(-location => 'http://cgi.cs.mcgill.ca/~rkucer/RegisterError.html');
+	print $q->header(-location => 'http://cgi.cs.mcgill.ca/~rkucer/cgi-bin/RegisterError.html');
 	}
 }
 close $fh;
