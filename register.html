@@ -7,7 +7,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
-<body background="images/background_1.jpg" text="black">
+<body background="lambo1.jpg" text="black">
 
 <div class="menu">
 
@@ -31,7 +31,7 @@
 
 <p style="position: fixed; bottom: 0; width:100%; text-align: center">Please complete all fields and click submit to create your account.</p>
 
-<form  action="./cgi-bin/Register.pl" autocomplete="on" method="POST"> 
+<form  action="./Register.pl" autocomplete="on" method="POST"> 
      <h1 style="position: fixed; top: 150; width:100%; text-align: left">Register</h1> 
      <p style="position: fixed; top: 200; width:100%; text-align: left"> 
           <label for="firstname" class="firstname" data-icon="firstname" >Firstname:</label>
@@ -45,16 +45,53 @@
           <label for="username" class="uname" data-icon="u" >Username:</label>
           <input id="username" name="username" required="required" type="text" placeholder="Username"/>
      </p>
-     <p style="position: fixed; top: 290; width:100%; text-align: left"> 
-          <label for="password" class="youpasswd" data-icon="p">Password:</label>
-          <input id="password" name="password" required="required" type="password" placeholder="Password" /> 
-     </p>
-     <p style="position: fixed; top: 320; width:100%; text-align: left"> 
-          <label for="password" class="youpasswd" data-icon="p">Confirm Password:</label>
-          <input id="cpassword" name="cpassword" required="required" type="password" placeholder="Password" /> 
+     <script type="text/javascript" src="/code_examples/passtest.js"></script>
+<div class="tutorialWrapper">
+        <div class="fieldWrapper" style="position: fixed; top: 310; width:100%; text-align: left">
+            <label for="pass1">Password:</label>
+            <input name="pass1" id="pass1" type="password" required="required">
+        </div>
+        <div class="fieldWrapper" style="position: fixed; top: 340; width:100%; text-align: left">
+            <label for="pass2">Confirm Password:</label>
+            <input name="pass2" id="pass2" onkeyup="checkPass(); return false;" type="password" required="required">
+            <span id="confirmMessage" class="confirmMessage"></span>
+        </div>
+</div>
+<script language="javascript">
+function checkPass()
+{
+    //Store the password field objects into variables ...
+    var pass1 = document.getElementById('pass1');
+    var pass2 = document.getElementById('pass2');
+    //Store the Confimation Message Object ...
+    var message = document.getElementById('confirmMessage');
+    //Set the colors we will be using ...
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+    //Compare the values in the password field
+    //and the confirmation field
+    if(pass1.value == pass2.value){
+        //The passwords match.
+        //Set the color to the good color and inform
+        //the user that they have entered the correct password
+        pass2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Passwords Match!";
+	document.getElementById('submit').removeAttribute("disabled");
+    }else{
+        //The passwords do not match.
+        //Set the color to the bad color and
+        //notify the user.
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Passwords Do Not Match!";
+	document.getElementById('submit').setAttribute("disabled", "");
+    }
+}  
+</script>
      </p>
      <p class="register button"; style="position: fixed; top: 350; width:100%; text-align: left"> 
-          <input type="submit" value="Register" /> 
+          <input id="submit" type="submit" value="Register" disabled/> 
 </form>
 </div>
 </body>

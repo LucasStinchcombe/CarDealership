@@ -1,25 +1,25 @@
 #!/usr/bin/perl
-use strict;
+
 use warnings;
 use CGI;
 my $q = new CGI;
 my $firstname = $q->param( 'firstname' );
 my $lastname = $q->param( 'lastname' );
 my $username = $q->param( 'username' );
-my $password = $q->param( 'password' );
-my $cpassword = $q->param( 'cpassword' );
+my $pass1 = $q->param( 'pass1' );
+my $pass2 = $q->param( 'pass2' );
 
-open (my $fh, "<", 'members.csv') or die "Cannot open $file: $!";
+open (my $fh, "<", 'members.csv') or die "Cannot open : $!";
 while (my $row = <$fh>) {
 	if (index($row, $username) != -1) 
 	{
 	#close $fh;
-	print $q->header(-location => 'http://cgi.cs.mcgill.ca/~rkucer/RegisterError.html');
+	print $q->header(-location => 'http://cgi.cs.mcgill.ca/~rkucer/cgi-bin/RegisterError.html');
 	}
 }
 close $fh;
 open($fh, '>>', 'members.csv');
-print $fh "$username,$firstname,$lastname,$password,$cpassword\n";
+print $fh "$username,$firstname,$lastname,$pass1,$pass2\n";
 close $fh;
 print "Content-type: text/html\n\n";
 print <<HTML;
