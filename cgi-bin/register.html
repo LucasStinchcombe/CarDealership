@@ -1,0 +1,91 @@
+
+<html>
+<head>
+<title> Registration </title>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body background="lambo1.jpg" text="black">
+
+<div class="menu">
+
+<div class="logo">
+
+<h1>Buy Our Cars</h1>
+
+</div>
+
+<div class="links">
+
+<a href="http://cgi.cs.mcgill.ca/~jgoxha/cgi-bin/#">Home</a>
+<a href="http://cgi.cs.mcgill.ca/~jgoxha/cgi-bin/catalogue.html">Catalogue</a>
+<a href="http://cgi.cs.mcgill.ca/~jgoxha/cgi-bin/login.html">Login</a>
+
+</div>
+
+</div>
+
+<div style="position: relative">
+
+<p style="position: fixed; bottom: 0; width:100%; text-align: center">Please complete all fields and click submit to create your account.</p>
+
+<form  action="./Register.pl" autocomplete="on" method="POST"> 
+     <h1 style="position: fixed; top: 150; width:100%; text-align: left">Register</h1> 
+     <p style="position: fixed; top: 200; width:100%; text-align: left"> 
+          <label for="firstname" class="firstname" data-icon="firstname" >Firstname:</label>
+          <input id="firstname" name="firstname" required="required" type="text" placeholder="First name"/>
+     </p>
+     <p style="position: fixed; top: 230; width:100%; text-align: left"> 
+          <label for="lastname" class="lname" data-icon="l" >Lastname:</label>
+          <input id="lastname" name="lastname" required="required" type="text" placeholder="Last name"/>
+     </p>
+     <p style="position: fixed; top: 260; width:100%; text-align: left"> 
+          <label for="username" class="uname" data-icon="u" >Username:</label>
+          <input id="username" name="username" required="required" type="text" placeholder="Username"/>
+     </p>
+     <script type="text/javascript" src="/code_examples/passtest.js"></script>
+<div class="tutorialWrapper">
+        <div class="fieldWrapper" style="position: fixed; top: 310; width:100%; text-align: left">
+            <label for="pass1">Password:</label>
+            <input name="pass1" id="pass1" type="password" required="required">
+        </div>
+        <div class="fieldWrapper" style="position: fixed; top: 340; width:100%; text-align: left">
+            <label for="pass2">Confirm Password:</label>
+            <input name="pass2" id="pass2" onkeyup="checkPass(); return false;" type="password" required="required">
+            <span id="confirmMessage" class="confirmMessage"></span>
+        </div>
+</div>
+<script language="javascript">
+function checkPass()
+{
+    //store password into variable
+    var pass1 = document.getElementById('pass1');
+    var pass2 = document.getElementById('pass2');
+    var message = document.getElementById('confirmMessage');
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+    //compare password values
+    if(pass1.value == pass2.value){
+        //inform user passwords match
+        pass2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Passwords Match!";
+	document.getElementById('submit').removeAttribute("disabled");
+    }else{
+        //inform user passwords dont match
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Passwords Do Not Match!";
+	document.getElementById('submit').setAttribute("disabled", "");
+    }
+}  
+</script>
+     </p>
+     <p class="register button"; style="position: fixed; top: 350; width:100%; text-align: left"> 
+          <input id="submit" type="submit" value="Register" disabled/> 
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Buy Our Cars</title>
+  <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <div class="slide">
+    <img class="background" src="images/background_1.jpg">
+    <div id="caption1">
+      <h3>Look at this car.  We sell these.  You want one.</h3>
+    </div>
+  </div>
+  <div class="slide">
+    <img class="background" src="images/background_2.jpg">
+    <div id="caption2">
+      <h3>That's an airplane.  Airplanes are fast.  But this car is faster.</h3>
+    </div>
+  </div>
+  <div class="slide">
+    <img class="background" src="images/background_3.jpg">
+    <div id="caption3">
+      <h3>Wow. Look at that car.  Do you have a girlfriend?  I bet if you owned this car you would.  But you don't, so no girlfriend for you.</h3>
+    </div>
+  </div>
+
+  
+  <div class="menu">
+    <div class="logo">
+      <h1>Buy Our Cars</h1>
+    </div>
+    <div class="links">
+      <a href="index.html">home</a>
+      <a href="catalogue.html">catalogue</a>
+      <a href="login.html" target="_blank">login</a>
+    </div>
+  </div>
+
+
+
+  <script language="javascript">
+  var background = function(){
+    var counter =0;
+    $(".slide").each(function(index) {
+      var image = this;
+      $(image).delay(4000*index).fadeIn(750, function(){
+        setTimeout(function(){
+          counter++;
+          if(counter != 3 ){
+            $(image).fadeOut(1000);
+          }
+        }, 3250);
+        });
+      });
+    }
+    background();
+
+  </script>
+
+</body>
+</html>

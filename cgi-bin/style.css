@@ -1,0 +1,190 @@
+body{
+  background-color: #222222;
+}
+.slide{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index = -1;
+  display: none;
+}
+img.background{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+#caption1{
+  position: absolute;
+  right: 40px;
+  top: 25%;
+  height: 20%;
+  width: 45%;
+}
+#caption2{
+  position: absolute;
+  left: 40px;
+  top: 35%;
+  height: 20%;
+  width: 40%;
+}
+#caption3{
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  height: 20%;
+  width: 44%;
+}
+.menu{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 12%;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #999999;
+  opacity: 0.8;
+}
+.logo{
+  text-align: left;
+  position: absolute;
+  bottom: 25%;
+  left: 3%;
+}
+.links{
+  position: absolute;
+  bottom: 30%;
+  right: 3%;
+}
+.main{
+  position: absolute;
+  top: 12%;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  padding-bottom: 40px;
+  padding-top: 15px;
+  display: none;
+}
+.login{
+  position: absolute;
+  top: 17%;
+  left: 5%;
+  width: 90%;
+  height: 75%;
+  background-color: #cccccc;
+  display: none;
+}
+.loginform{
+  position: absolute;
+  top: 7%;
+  left: 4%;
+  width: 46%;
+  height: 86%;
+  border-right: 1px solid #dbdbdb;
+}
+.register{
+  position: absolute;
+  top: 7%;
+  right: 4%;
+  width: 42%;
+  height: 86%;
+}
+img.product{
+  padding: 60px;
+}
+.info{
+  padding: 20px;
+}
+a{
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111111;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+}
+.register a{
+  text-transform: none;
+  color: #333333;
+  font-size: 20px;
+}
+a:hover{
+  color: #777777;
+}
+h1{
+  margin: 0px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111111;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+}
+.login h1{
+  color: #333333
+  padding: 15px;
+  font-size: 28px;
+  padding-bottom: 15px;
+  text-decoration: underline;
+}
+h3{
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #cccccc;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+}
+p{
+  color: #cccccc;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  padding-right: 15px;
+}
+.slide h3{
+  color: #333444;
+  font-size: 25px;
+  line-height: 38px;
+}
+.login p{
+  color: #333333;
+  padding-left: 20px;
+}
+.loggedin{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #eeeeee;
+  opacity: 0.9;
+}
+.welcome{
+  position: absolute;
+  bottom: 45%;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+}
+.welcome h1{
+  padding: 10px;
+}
+.middle{
+  background-color: #333333;
+  padding-left: 50px;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
