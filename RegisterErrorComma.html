@@ -1,27 +1,32 @@
 <html>
 <head>
-<title>Registration Error</title>
-<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="style.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <title>Registration Failed</title>
+  <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
-<body background="lambo1.jpg" text="black">
-<div class="menu">
-<div class="logo">
-<h1>Buy Our Cars</h1>
-</div>
-<div class="links">
-<a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/#">Home</a>
-<a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/catalogue.html">Catalogue</a>
-<a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/login.html">Login</a>
-<a href="http://cgi.cs.mcgill.ca/~rkucer/register.html">Register</a>
-</div>
-</div>
-<div style="position: relative">
-<h1 style="position: fixed; top: 150; width:100%; text-align: left">Registration Error</h1>
-<p style="position: fixed; top: 200; width:100%; text-align: left">Registration failed. User information can not contain commas. Please try registering again without commas.</p>
-<p style="position: fixed; top: 250; width:100%; text-align: left"><a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/#">Home</a></p>
-<p style="position: fixed; top: 300; width:100%; text-align: left"><a href="http://cgi.cs.mcgill.ca/~rkucer/register.html">Register</a></p>
-</div>
+<body>
+  <div class="menu">
+    <div class="logo">
+      <h1>Buy Our Cars</h1>
+    </div>
+    <div class="links">
+      <a href="index.html">home</a>
+      <a href="catalogue.html">catalogue</a>
+      <a href="login.html">login</a>
+    </div>
+  </div>
+  <div class="login">
+    <div class=registration>
+      <h1>User Information Cannot Contain Commas</h1>
+      <p><a href="register.html">Back to Register Page</a></p>
+    </div>
+  </div>
+
+  <script language="javascript">
+      $(".login").fadeIn(750);
+  </script>
+
+
 </body>
 </html>

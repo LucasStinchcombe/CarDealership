@@ -21,7 +21,7 @@ def displayError():
 	print "<html>"
 	print "<head></head>"
 	print "<body><center><p>Error: Please log in to purchase</p>"
-	print "<p><a href=\"http://cgi.cs.mcgill.ca/~jgoxha/cgi-bin/catalogue.html\">Return to catalogue</a></p></center>"
+	print "<p><a href=\"catalogue.html\">Return to catalogue</a></p></center>"
 	print "</body></html>"
 	
 def displayBill():
@@ -100,8 +100,8 @@ def displayBill():
 	total = costM + costL + costF		# calculate total
 	print "<br /><center><i><b>Total: $%d</b></i></center><br />" %(total)
 	print "<center><h6><i>*If your item total is less than what you input, we are out of or limited in stock</i></h6></center>"
-	print "<center><a href=\"http://cgi.cs.mcgill.ca/~jgoxha/cgi-bin/catalogue.html\">Return to catalogue</a></center>"
-	print "<center><a href=\"http://cgi.cs.mcgill.ca/~jgoxha/cgi-bin/index.html\">Return to homepage</a></center></body>"
+	print "<center><a href=\"catalogue.html\">Return to catalogue</a></center>"
+	print "<center><a href=\"index.html\">Return to homepage</a></center></body>"
 	print "</html>"
 	
 isLoggedIn()

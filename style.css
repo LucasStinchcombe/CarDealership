@@ -79,6 +79,26 @@ img.background{
   background-color: #cccccc;
   display: none;
 }
+.done{
+  position: absolute;
+  top: 17%;
+  left: 5%;
+  width: 90%;
+  height: 75%;
+  background-color: #cccccc;
+}
+.registration{
+  padding: 50px;
+  padding-left: 70px;
+}
+.inputs{
+  text-align: left;
+  position: absolute;
+  top: 15%;
+  left: 37%;
+  width: auto
+  height: auto
+}
 .loginform{
   position: absolute;
   top: 7%;

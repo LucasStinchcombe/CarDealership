@@ -41,17 +41,20 @@ int main(int argc, char *argv[]){
   while(fgets(buffer, 100, ptr)!=NULL){
     len=strlen(buffer);
     while(buffer[a] != ','){
+      memberUser[a]=buffer[a];
+      a++;
+    } memberUser[a]='\0';
+    a++;
+    while(buffer[a] != ','){
+      a++;
+    }
+    a++;
+    while(buffer[a] != ','){
       a++;
     }
     a++;
     b=a;
     while(buffer[a] != ','){
-      memberUser[a-b]=buffer[a];
-      a++;
-    } memberUser[a-b]='\0';
-    a++;
-    b=a;
-    while(buffer[a] != '\n'){
       memberPass[a-b]=buffer[a];
       a++;
     } memberPass[a-b]='\0';

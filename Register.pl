@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl                                                                                                                                                       
 use diagnostics;
 use warnings;
 use CGI;
@@ -13,55 +13,56 @@ my $file = "members.csv";
 open (my $data, '<', $file);
 my $status = 'YES';
 while (my $line = <$data>) {
-	our @split = split (',', $line);
-	if ($split[0] eq $username) {
-		close $file;
-		print $q->header(-location => 'http://cgi.cs.mcgill.ca/~rkucer/RegisterError.html');
-		$status = 'NO';
-		last;
-	}
+    our @split = split (',', $line);
+    if ($split[0] eq $username) {
+	close $file;
+	print $q->header(-location => 'RegisterError.html');
+	$status = 'NO';
+	last;
+    }
 }
 if ($status eq "YES") {
-close $file;						
-	if (index($username, ',') != -1 || 
-	index($firstname, ',') != -1 ||
-	index($lastname, ',') != -1 ||
-	index($pass1, ',') != -1 || 
-	index($pass2, ',') != -1) {
-print $q->header(-location => 'http://cgi.cs.mcgill.ca/~rkucer/RegisterErrorComma.html');
-	}
-	else {
-		open (my $csv, '>>', $file);
-		print $csv "$username,$firstname,$lastname,$pass1,$pass2\n";
-		close $file ;
-print "Content-type: text/html\n\n";
-print <<HTML;
+    close $file;
+  if (index($username, ',') != -1 ||
+  index($firstname, ',') != -1 ||
+  index($lastname, ',') != -1 ||
+  index($pass1, ',') != -1 ||
+      index($pass2, ',') != -1) {
+      print $q->header(-location => 'RegisterErrorComma.html');
+  }
+    else {
+	open (my $csv, '>>', $file);
+	print $csv "$username,$firstname,$lastname,$pass1,$pass2\n";
+	close $file ;
+	print "Content-type: text/html\n\n";
+	print <<HTML;
 <html>
 <head>
-	<title>Registration Complete</title>
-	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="style.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	</head>
-<body background="lambo1.jpg" text="black">
-	<div class="menu">
-	<div class="logo">
-	<h1>Buy Our Cars</h1>
-</div>
-<div class="links">
-	<a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/#">Home</a>
-	<a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/catalogue.html">Catalogue</a>
-	<a href="http://cgi.cs.mcgill.ca/~lstinc/CarDealership/login.html">Login</a>
-	<a href="http://cgi.cs.mcgill.ca/~rkucer/register.html">Register</a>
-</div>
-</div>
-<div style="position: relative">
-	<h1 style="position: fixed; top: 150; width:100%; text-align: left">Registration Complete</h1>
-	<p style="position: fixed; top: 200; width:100%; text-align: left">Name: $firstname $lastname</p>
-	<p style="position: fixed; top: 250; width:100%; text-align: left">Username: $username</p>
-</div>
+  <title>Registration Complete</title>
+  <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="menu">
+    <div class="logo">
+      <h1>Buy Our Cars</h1>
+    </div>
+    <div class="links">
+      <a href="index.html">home</a>
+      <a href="catalogue.html">catalogue</a>
+      <a href="login.html">login</a>
+    </div>
+  </div>
+  <div class="done">
+    <div class="registration">
+      <h1>Registration Complete!</h1>
+      <p>Name:$firstname $lastname</p>
+      <p>Username:$username</p>
+    </div>
+  </div>
+
 </body>
+</html>
 HTML
 exit;
-}
-}
+}}
