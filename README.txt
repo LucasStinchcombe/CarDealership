@@ -1,4 +1,4 @@
-Lara Goxhaj, 260574574 :
+Lara Goxhaj, ID: 260574574
 	catalogue.html
 	purchase.cgi
 	inventory.csv
